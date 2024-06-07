@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
         textTheme: const TextTheme().copyWith(
-          bodyLarge: TextStyle(fontFamily: 'Caros'),
+          bodyLarge: const TextStyle(fontFamily: 'Caros'),
         ),
       ),
       home: SplashScreen(),

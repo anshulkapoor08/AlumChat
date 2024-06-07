@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lottie/lottie.dart';
+//import 'package:lottie/lottie.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -37,6 +37,7 @@ class _SignInPageState extends State<SignInPage> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 80,
+                        //fontFamily: "Caros", // "Caros
                         fontWeight: FontWeight.w200,
                       ),
                     ),
