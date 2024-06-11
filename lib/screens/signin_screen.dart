@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-//import 'package:lottie/lottie.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:lottie/lottie.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -37,7 +38,6 @@ class _SignInPageState extends State<SignInPage> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 80,
-                        //fontFamily: "Caros", // "Caros
                         fontWeight: FontWeight.w200,
                       ),
                     ),
@@ -132,8 +132,17 @@ class _SignInPageState extends State<SignInPage> {
               backgroundColor: MaterialStateProperty.all<Color>(Colors.white), // Background color
               foregroundColor: MaterialStateProperty.all<Color>(Colors.purple), // Text color
             ),
-                  onPressed: () {
-                    var signIn = 
+                  onPressed: () async {
+                    var googlesignin =await GoogleSignIn(
+                    clientId: '937708518517-vjih5mpb7fh6sn2ka1vv9iob24tb0c4q.apps.googleusercontent.com',
+                    scopes: [
+                      "https://www.googleapis.com/auth/userinfo.email",
+                      "https://www.googleapis.com/auth/userinfo.profile"
+                    ],
+                  );
+                  await googlesignin.signIn().then((value) {
+                    print(value);
+                  });
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
